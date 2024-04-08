@@ -72,10 +72,10 @@ dc = [0,1,0,-1]
 
 board =[list(map(int,input().split())) for _ in range(l)]
 
-for i in range(1,n+1):
+for i in range(n):
     r,c,h,w,k = map(int,input().split())
-    rect_pos(i,r,c,h,w)
-    origin_power[i] = k
+    rect_pos(i+1,r,c,h,w)
+    origin_power[i+1] = k
 power = origin_power.copy()
 
 
