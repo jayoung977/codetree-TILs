@@ -60,7 +60,7 @@ def print_data(arr):
 
 
 
-l,q,n = map(int,input().split())
+l,n,q = map(int,input().split())
 
 pos = [[] for _ in range(n+1)]
 gisa = [[0]*l for _ in range(l)]
@@ -72,10 +72,10 @@ dc = [0,1,0,-1]
 
 board =[list(map(int,input().split())) for _ in range(l)]
 
-for i in range(n):
+for i in range(1,n+1):
     r,c,h,w,k = map(int,input().split())
-    rect_pos(i+1,r,c,h,w)
-    origin_power[i+1] = k
+    rect_pos(i,r,c,h,w)
+    origin_power[i] = k
 power = origin_power.copy()
 
 
