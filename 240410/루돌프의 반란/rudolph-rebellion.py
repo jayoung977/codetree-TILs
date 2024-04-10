@@ -30,7 +30,7 @@ for t in range(1, m + 1):
         if not is_live[i]:
             continue
 
-        currentBest = ((closestX - rudolf[0]) ** 2 + (closestY - rudolf[1]) ** 2, ,-closestX, -closestY)
+        currentBest = ((closestX - rudolf[0]) ** 2 + (closestY - rudolf[1]) ** 2 ,-closestX, -closestY)
         currentValue = ((pos[i][0] - rudolf[0]) ** 2 + (pos[i][1] - rudolf[1]) ** 2, -pos[i][0], -pos[i][1])
 
         if currentValue < currentBest:
