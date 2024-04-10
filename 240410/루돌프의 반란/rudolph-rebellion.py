@@ -8,7 +8,7 @@ rudolf = tuple(map(int, input().split()))
 points = [0 for _ in range(p + 1)]
 pos = [(0, 0) for _ in range(p + 1)]
 board = [[0 for _ in range(n + 1)] for _ in range(n + 1)]
-is_live = [False for _ in range(p + 1)]
+is_live = [True for _ in range(p + 1)]
 stun = [0 for _ in range(p + 1)]
 
 dx = [-1, 0, 1, 0]
@@ -19,8 +19,8 @@ board[rudolf[0]][rudolf[1]] = -1
 for _ in range(p):
     id, x, y = tuple(map(int, input().split()))
     pos[id] = (x, y)
-    board[pos[id][0]][pos[id][1]] = id
-    is_live[id] = True
+    board[x][y] = id
+    
 
 for t in range(1, m + 1):
     closestX, closestY, closestIdx = 10000, 10000, 0
