@@ -5,11 +5,11 @@ def is_inrange(x, y):
 n, m, p, c, d = map(int, input().split())
 rudolf = tuple(map(int, input().split()))
 
-points = [0 for _ in range(p + 1)]
-pos = [(0, 0) for _ in range(p + 1)]
-board = [[0 for _ in range(n + 1)] for _ in range(n + 1)]
-is_live = [True for _ in range(p + 1)]
-stun = [0 for _ in range(p + 1)]
+points = [0]*(p + 1)
+pos = [(0, 0)]*(p + 1)
+board = [[0]*(n + 1) for _ in range(n + 1)]
+is_live = [True]*(p + 1)
+stun = [0]*(p + 1)
 
 dx = [-1, 0, 1, 0]
 dy = [0, 1, 0, -1]
@@ -24,7 +24,6 @@ for _ in range(p):
 
 for t in range(1, m + 1):
     closestX, closestY, closestIdx = 10000, 10000, 0
-
     # 살아있는 포인트 중 루돌프에 가장 가까운 산타를 찾습니다.
     for i in range(1, p + 1):
         if not is_live[i]:
