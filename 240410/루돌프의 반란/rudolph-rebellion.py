@@ -73,9 +73,6 @@ for t in range(1, m + 1):
             beforeX = lastX - moveX
             beforeY = lastY - moveY
 
-            if not is_inrange(beforeX, beforeY):
-                break
-
             idx = board[beforeX][beforeY]
 
             if not is_inrange(lastX, lastY):
