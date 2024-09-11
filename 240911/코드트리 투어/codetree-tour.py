@@ -8,6 +8,7 @@ INF = int(1e9)
 G = []
 I = []
 dic = {}
+id_set =set()
 def dijkstra(start):
     q = []
     init_w = 0
@@ -43,22 +44,28 @@ for q_idx in range(Q):
         # print("dest:{},cost:{}".format(dest,dic[start][dest]))
         cost = dic[start][dest]
         heappush(I,(-(revenue-cost),id,revenue,dest))
+        id_set.add(id)
         # print("q_idx:{} 200 heappush heap  :{}".format(q_idx,I))
 
     elif orders[0]==300:
         id = orders[1]
-        temp = []
-        while I:
-            minus_profit,idx,revenue,dest = heappop(I)
-            if idx == id:
-                break
-            else:
-                temp.append((minus_profit,idx,revenue,dest))
-        for item in temp:
-            heappush(I,item)
+        if id in id_set:
+            id_set.remove(id)
+
+        # temp = []
+        # while I:
+        #     minus_profit,idx,revenue,dest = heappop(I)
+        #     if idx == id:
+        #         break
+        #     else:
+        #         temp.append((minus_profit,idx,revenue,dest))
+        # for item in temp:
+        #     heappush(I,item)
         # print("q_idx:{} 300 heappop heap  :{}".format(q_idx,I))
 
     elif orders[0]==400:
+        while I and I[0][1] not in id_set:
+            heappop(I)
         if I:
             minus_profit,idx,revenue,dest = heappop(I)
             if minus_profit>0:
