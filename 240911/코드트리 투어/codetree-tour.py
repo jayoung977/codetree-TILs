@@ -1,5 +1,7 @@
 from heapq import heappop,heappush
 # from collections import deque
+import sys
+input = sys.stdin.readline
 Q =int(input())
 start = 0
 INF = int(1e9)
