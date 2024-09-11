@@ -1,5 +1,5 @@
 from heapq import heappop,heappush
-from collections import deque
+# from collections import deque
 Q =int(input())
 start = 0
 INF = int(1e9)
@@ -9,9 +9,6 @@ dic = {}
 def dijkstra(start):
     q = []
     init_w = 0
-    # for u,w in G[start]:
-    #     if u == start:
-    #         init_w = w
     heappush(q,(init_w,start))
     distance=[INF]*n
     distance[start]=init_w
@@ -48,15 +45,15 @@ for q_idx in range(Q):
 
     elif orders[0]==300:
         id = orders[1]
-        temp = deque()
+        temp = []
         while I:
             minus_profit,idx,revenue,dest = heappop(I)
             if idx == id:
                 break
             else:
                 temp.append((minus_profit,idx,revenue,dest))
-        while temp:
-            heappush(I,temp.popleft())
+        for item in temp:
+            heappush(I,item)
         # print("q_idx:{} 300 heappop heap  :{}".format(q_idx,I))
 
     elif orders[0]==400:
@@ -82,11 +79,11 @@ for q_idx in range(Q):
     elif orders[0]==500:
         start = orders[1]
         dic[start] = dijkstra(start)
-        temp = deque()
+        temp = []
         while I:
             minus_profit, idx,revenue,dest = heappop(I)
             cost = dic[start][dest]
             temp.append((-(revenue-cost),idx,revenue,dest))  
-        while temp:
-            heappush(I,temp.popleft())
+        for item in temp:
+            heappush(I,item)
         # print("q_idx:{} 500 heappush heap  :{}".format(q_idx,I))
