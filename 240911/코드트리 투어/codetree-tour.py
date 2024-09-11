@@ -9,9 +9,9 @@ dic = {}
 def dijkstra(start):
     q = []
     init_w = 0
-    for u,w in G[start]:
-        if u == start:
-            init_w = w
+    # for u,w in G[start]:
+    #     if u == start:
+    #         init_w = w
     heappush(q,(init_w,start))
     distance=[INF]*n
     distance[start]=init_w
