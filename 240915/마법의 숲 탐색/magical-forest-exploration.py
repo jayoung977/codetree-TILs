@@ -25,7 +25,7 @@ for i,(c,d) in enumerate(golem_list):
     br,bc = 0,0
     flag = False
     while True:
-        if (check_direction(r+1,c,[0,1,0],[1,0,-1]):
+        if (check_direction(r+1,c,[0,1,0],[1,0,-1])):
             flag=True
             r,c = r+1,c 
         elif check_direction(r,c-1,[-1,1,0,1,2],[0,0,-1,-1,0]):
