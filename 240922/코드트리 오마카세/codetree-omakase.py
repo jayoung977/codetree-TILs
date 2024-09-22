@@ -1,4 +1,6 @@
 from collections import deque
+import sys
+input = sys.stdin.readline
 L,Q = map(int,input().split())
 Time=0
 sushi_belt = deque([[] for _ in range(L)])
